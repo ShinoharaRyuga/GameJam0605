@@ -7,6 +7,9 @@ TagManager:
   - SP1
   - SP2
   - SP3
+  - SpeedUpItem
+  - HealItem
+  - Enemy
   layers:
   - Default
   - TransparentFX
