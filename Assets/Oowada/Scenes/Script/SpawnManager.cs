@@ -43,4 +43,9 @@ public class SpawnManager : MonoBehaviour
             _spawnCount++;
         }
     }
+
+    public void SetMaxSpawnCount(int maxSpawnCount)
+    {
+        _maxSpawnCount = maxSpawnCount;
+    }
 }
