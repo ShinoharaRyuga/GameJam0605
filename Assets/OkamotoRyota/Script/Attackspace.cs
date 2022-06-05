@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Attackspace : MonoBehaviour
 {
-    [SerializeField] float AttackInterval = 3;
-    float Timer;
+    [SerializeField]public float AttackInterval = 3;
+    public float AttackIntervalMin = 0.2f;
+    float _timer = 0;
     // Update is called once per frame
     void Update()
     {
 
-        Timer += Time.deltaTime;
+        _timer += Time.deltaTime;
 
-        if (Input.GetButtonDown("Fire1") && Timer > AttackInterval)
+        if (Input.GetButtonDown("Fire1") && _timer > AttackInterval)
         {
-            Timer = 0;
+            AttackIntervalMin = 0;
         }
     }
 }
