@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
-    //[SerializeField] LayerMask _layerMask = default;
+    [SerializeField] LayerMask _layerMask = default;
     [SerializeField] float _rayDistance = 100f;
-    [SerializeField] int _atk = 1;
 
     void Start()
     {
@@ -25,28 +24,12 @@ public class Attack : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction);
+
         if (hit)
         {
-            if (hit.collider.gameObject.CompareTag("HealItem"))
-            {
-                var item = hit.collider.GetComponent<HealItem>();
-                item.GetHealItem();
-                Debug.Log($"回復アイテムに当たった");
-            }
-            else if (hit.collider.gameObject.CompareTag("SpeedUpItem"))
-            {
-                Debug.Log("速度アップアイテムに当たった");
-                var item = hit.collider.GetComponent<SpeedUpItem>();
-                item.GetSpeedUpItem();
-            }
-            else if (hit.collider.gameObject.CompareTag("Enemy"))
-            {
-                var enemy = hit.collider.GetComponent<Enemy>();
-                Debug.Log("Enemyに当たった");
-                enemy.GetDamage(_atk);
-            }
+            Debug.Log($"{hit}に当たった");
         }
-        else if (hit.collider == null)
+        else
         {
             Debug.Log("何にも当たらなかった");
         }
