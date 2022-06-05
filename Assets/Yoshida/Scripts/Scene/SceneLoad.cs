@@ -16,7 +16,7 @@ public class SceneLoad : MonoBehaviour
 
     public void LoadScene()
     {
-        GameManager.Instance.InstantiateFadeObj();
+        //GameManager.Instance.InstantiateFadeObj();
         StartCoroutine(SceneChange());
     }
 
