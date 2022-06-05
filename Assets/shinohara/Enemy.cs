@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -8,9 +7,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField, Tooltip("‘Ì—Í")] int _hp = 1;
-    [SerializeField] float _moveSpeed = 1f;
-    [SerializeField] float _attackInterval = 1f;
-
+    [SerializeField, Tooltip("ˆÚ“®‘¬“x")] float _moveSpeed = 1f;
+    [SerializeField, Tooltip("UŒ‚ŠÔŠu")] float _attackInterval = 1f;
     Rigidbody2D _rb2D => GetComponent<Rigidbody2D>();
 
     void Start()
@@ -29,6 +27,7 @@ public class Enemy : MonoBehaviour
         if (_hp <= 0)
         {
             Destroy(gameObject);
+            GameManager.Instance.ChangeEnemyCount();
         }
     }
 
