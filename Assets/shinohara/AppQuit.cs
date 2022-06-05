@@ -5,7 +5,7 @@ public class AppQuit : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetButtonDown(""))
+        if (Input.GetButtonDown("Cancel"))
         {
             Application.Quit();
         }

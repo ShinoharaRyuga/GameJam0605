@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 8671268843305490224}
   - component: {fileID: 5976995550140388028}
   - component: {fileID: 4820914773677801546}
+  - component: {fileID: 4651345199091375394}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -431,9 +432,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8143597713681952012}
-        m_TargetAssemblyTypeName: GameResult, Assembly-CSharp
-        m_MethodName: LoadTitleScene
+      - m_Target: {fileID: 4651345199091375394}
+        m_TargetAssemblyTypeName: SceneLoad, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -443,3 +444,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4651345199091375394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5906134425293965408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3a9a7f0e0595ad40a33867bde3bbf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadSceneName: Title
+  _waitTime: 1
