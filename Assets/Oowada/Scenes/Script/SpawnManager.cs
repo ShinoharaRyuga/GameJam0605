@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
 
     [SerializeField] private string _SpawnPointTag = "";
-    [SerializeField] private GameObject _enemy;
+    [SerializeField] private List<GameObject> _enemy;
     [SerializeField] private Vector2 _spawnTimeRange = new Vector2(1, 5);
     [SerializeField] private int _maxSpawnCount = 10;
 
@@ -36,7 +36,8 @@ public class SpawnManager : MonoBehaviour
         {
             int random = Random.Range(0, _spawnPoints.Count);
             Vector3 _pos = _spawnPoints[random].transform.position;
-            Instantiate(_enemy, _pos, Quaternion.identity);
+            int enemyrandom = Random.Range(0, _enemy.Count);
+            Instantiate(_enemy[enemyrandom], _pos, Quaternion.identity);
             _currentTime = 0;
             _targetTime = Random.Range(_spawnTimeRange.x, _spawnTimeRange.y);
             _spawnCount++;
