@@ -1226,7 +1226,7 @@ MonoBehaviour:
   HP: 0
   HPmax: 3
   _hpSlider: {fileID: 1949117688}
-  _infoText: {fileID: 1751724335}
+  _uiText: {fileID: 1751724335}
 --- !u!114 &-9157608012185626269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,6 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6d95227478279240962f6d53ffdd976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coolTimeSlider: {fileID: 0}
+  _coolTimeSlider: {fileID: 1554139343}
   AttackInterval: 3
   AttackIntervalMin: 0.2
+  _timer: 0

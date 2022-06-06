@@ -9,19 +9,19 @@ using UnityEngine.UI;
 public class SpeedUpItem : MonoBehaviour
 {
     [Tooltip("早くする間隔"), SerializeField] float _reduceTime = 0.2f;
-
+    PlayerHP _text;
 
     public void GetSpeedUpItem()
     {
         var currentspeed = GameManager.Instance.Attackspace.AttackInterval;
         var minspeedvalue = GameManager.Instance.Attackspace.AttackIntervalMin;
-
+        _text.GetComponent<PlayerHP>()._uiText.text = $"クールタイムが{_reduceTime}減少した！".ToString();
         currentspeed -= _reduceTime;
 
         if(currentspeed < minspeedvalue)
         {
             currentspeed = minspeedvalue;
-            Debug.Log("Speedは最速");
+            _text._uiText.text = $"クールタイムは最速です".ToString();
         }
     }
 }
