@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("フェードさせるオブジェクト")] GameObject _fadeObj = default;
     [SerializeField] GameObject _playerPrefab = default;
     [SerializeField, Tooltip("ゲームリザルトUI")] GameObject _gameResult = default;
+    [SerializeField, Tooltip("BGM")] GameObject _BGMPlayer = default;
     PlayerHP _playerHP;
     Attackspace _attackspace;
 
@@ -91,6 +92,16 @@ public class GameManager : MonoBehaviour
     {
         _currentStage++;
         Debug.Log($"currentStage = {_currentStage}");
+
+        if(_currentStage == _maxStage-1)
+        {
+            //_BGMPlayer.GetComponent<BGMPlayer>().PlayLastStageBGM();
+        }
+        if (_currentStage >= _maxStage)
+        {
+            //_BGMPlayer.GetComponent<BGMPlayer>().PlayResultBGM();
+        }
+
         if (_currentBackGround != null)
         {
             Destroy(_currentBackGround);
