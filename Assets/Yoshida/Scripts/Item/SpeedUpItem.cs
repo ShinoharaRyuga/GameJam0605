@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// UŒ‚‘¬“x‚ğ‘‚­‚·‚éƒAƒCƒeƒ€‚ÌƒNƒ‰ƒXBPlayer ‚ÌUŒ‚‚ª“–‚½‚Á‚½‚ç Player ‚ÌUŒ‚ŠÔŠu‚ğ’Z‚­‚·‚éB
@@ -8,18 +9,10 @@ using UnityEngine;
 public class SpeedUpItem : MonoBehaviour
 {
     [Tooltip("‘‚­‚·‚éŠÔŠu"), SerializeField] float _reduceTime = 0.2f;
-
+    [SerializeField] Attackspace _attackSpace;
 
     public void GetSpeedUpItem()
     {
-        var currentspeed = GameManager.Instance.Attackspace.AttackInterval;
-        var minspeedvalue = GameManager.Instance.Attackspace.AttackIntervalMin;
-        currentspeed -= _reduceTime;
-
-        if(currentspeed < minspeedvalue)
-        {
-            currentspeed = minspeedvalue;
-            Debug.Log("Speed‚ÍÅ‘¬");
-        }
+        _attackSpace.SpeedUp(_reduceTime);
     }
 }
