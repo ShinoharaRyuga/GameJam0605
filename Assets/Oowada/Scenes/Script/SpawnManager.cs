@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private List<GameObject> _enemy;
     [SerializeField] private Vector2 _spawnTimeRange = new Vector2(1, 5);
     [SerializeField] private int _maxSpawnCount = 10;
+    [SerializeField] public float _startDelay = 5;
 
     public List<GameObject> _spawnPoints;
     public float _currentTime = 0;
@@ -19,6 +20,7 @@ public class SpawnManager : MonoBehaviour
     {
         GameObject[] temp = GameObject.FindGameObjectsWithTag(_SpawnPointTag);
         _spawnPoints  = new List<GameObject>(temp);
+        _targetTime = _startDelay;
     }
 
     private void Update()
