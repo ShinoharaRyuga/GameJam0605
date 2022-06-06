@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
         while (true)
         {
             //ƒ_ƒ[ƒW‚ğ—^‚¦‚é
+            GameManager.Instance.PlayerHP.OnDamage(1);
             yield return new WaitForSeconds(_attackInterval);
         }
     }

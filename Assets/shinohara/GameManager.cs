@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     int _currentEnemyCount = 0;
     float _playTime = 0.0f;
     bool _isTimeCount = true;
+    GameObject _player = default;
     /// <summary>現在のステージ </summary>
     int _currentStage = -1;
     public PlayerHP PlayerHP { get => _playerHP; set => _playerHP = value; }
@@ -55,9 +56,9 @@ public class GameManager : MonoBehaviour
     {
         if (scene.name == "GameScene")
         {
-            var player = Instantiate(_playerPrefab, Vector2.zero, Quaternion.identity);
-            _playerHP = player.GetComponent<PlayerHP>();
-            _attackspace = player.GetComponent<Attackspace>();
+            _player = Instantiate(_playerPrefab, Vector2.zero, Quaternion.identity);
+            _playerHP = _player.GetComponent<PlayerHP>();
+            _attackspace = _player.GetComponent<Attackspace>();
             SetEnemyCount(_stageEnemyCounts[0]);
             StageChange();
         }
@@ -124,6 +125,8 @@ public class GameManager : MonoBehaviour
         _isTimeCount = false;
         GameObject resultUI = Instantiate(_gameResult, Vector3.zero, Quaternion.identity);
         resultUI.GetComponent<GameResult>().SetResultTime(_playTime);
+        Destroy(_player);
+        Cursor.visible = true;
     }
 
     /// <summary>各ステージの敵総数を決める </summary>
