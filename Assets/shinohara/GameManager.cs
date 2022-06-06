@@ -83,7 +83,8 @@ public class GameManager : MonoBehaviour
             Instantiate(_fadeObj);
         }
     }
-
+    
+    /// <summary>プレイヤーが死亡したらゲームオーバーUIを表示する </summary>
     public void GameOver()
     {
         Instantiate(_gameOverUI);
