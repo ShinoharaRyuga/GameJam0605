@@ -751,6 +751,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4618941236680285331, guid: 2fbafe67cd585f14d8f52b09c8b3062f, type: 3}
+      propertyPath: resultBgm
+      value: 
+      objectReference: {fileID: 8300000, guid: cf9c461be066dec4d9d843a97ab3d868, type: 3}
     - target: {fileID: 4823697421123808872, guid: 2fbafe67cd585f14d8f52b09c8b3062f, type: 3}
       propertyPath: m_Name
       value: BGM
