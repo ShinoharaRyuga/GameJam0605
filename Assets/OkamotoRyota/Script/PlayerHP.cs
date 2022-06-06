@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHP : MonoBehaviour
 {
+    [Tooltip("ダメージのエフェクト"), SerializeField] GameObject effectDamege;
+    [Tooltip("エフェクトの表示時間"), SerializeField] float WaitforTime;
     public int HP;//playersHP
     public int HPmax = 3;//PlayerMAXHP = 3
     [Tooltip("Slider"), SerializeField] Slider _hpSlider = default;
@@ -25,7 +27,8 @@ public class PlayerHP : MonoBehaviour
         HP -= _damage;
         UiText.text = $"{_damage}ダメージ受けた！".ToString();
         _hpSlider.value -= _damage;
-        if(HP <= 0 && !_dieFlag)
+        StartCoroutine(SetDamageEffect());
+        if(HP <= 0 && !_dieFlag) //死亡
         {
             HP = 0;//もしHPがダメージを受け、HPが0以下になった場合0にする
             GameManager.Instance.GameOver();
@@ -47,5 +50,12 @@ public class PlayerHP : MonoBehaviour
             UiText.text = "HPは既に最大です";
             return;
         }
+    }
+
+    IEnumerator SetDamageEffect()
+    {
+        effectDamege.SetActive(true);
+        yield return new WaitForSeconds(WaitforTime);
+        effectDamege.SetActive(false);
     }
 }
