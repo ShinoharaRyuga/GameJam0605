@@ -9,6 +9,11 @@ public class Enemy : MonoBehaviour
     [SerializeField, Tooltip("体力")] int _hp = 1;
     [SerializeField, Tooltip("移動速度")] float _moveSpeed = 1f;
     [SerializeField, Tooltip("攻撃間隔")] float _attackInterval = 1f;
+    [SerializeField, Tooltip("攻撃ダメージ")] int _attackDamage= 1;
+    [SerializeField] AudioSource _audioSource;
+    [SerializeField] AudioClip _deathSound;
+    [SerializeField] AudioClip[] _attackSound;
+
     Rigidbody2D _rb2D => GetComponent<Rigidbody2D>();
 
     void Start()
@@ -16,6 +21,7 @@ public class Enemy : MonoBehaviour
         var index = Random.Range(0, 8);
         Move((MoveDirection)index);
         StartCoroutine(Attack());
+        _audioSource = GetComponent<AudioSource>();
     }
 
     /// <summary>ダメージを受ける　体力が0以下になったら削除される </summary>
@@ -26,6 +32,7 @@ public class Enemy : MonoBehaviour
 
         if (_hp <= 0)
         {
+            _audioSource.PlayOneShot(_deathSound);
             Destroy(gameObject);
             GameManager.Instance.ChangeEnemyCount();
         }
@@ -38,7 +45,9 @@ public class Enemy : MonoBehaviour
         while (true)
         {
             //ダメージを与える
-            GameManager.Instance.PlayerHP.OnDamage(1);
+            int random = Random.Range(0, _attackSound.Length);
+            _audioSource.PlayOneShot(_attackSound[random]);
+            GameManager.Instance.PlayerHP.OnDamage(_attackDamage);
             yield return new WaitForSeconds(_attackInterval);
         }
     }
