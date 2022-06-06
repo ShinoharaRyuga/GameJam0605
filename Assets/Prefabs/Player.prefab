@@ -1339,6 +1339,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3465893403252782071}
     m_Modifications:
+    - target: {fileID: 2830212541313255092, guid: 41ec59d1443560846b62c149ccb74213, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2830212541313255095, guid: 41ec59d1443560846b62c149ccb74213, type: 3}
       propertyPath: m_Name
       value: FireEffectPlayer
