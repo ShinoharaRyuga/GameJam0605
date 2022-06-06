@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: a5050247169464979aa02ca80f9d4b15, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   _attackDamage: 2
   _attackFirstDelay: 2
   _audioSource: {fileID: -6621922822187000367}
-  _deathSound: {fileID: 8300000, guid: 0eb673dc31e22fd4a8f158be386c8053, type: 3}
+  _deathSound: {fileID: 8300000, guid: ba81ad652d5df854fb4fc93ec4009268, type: 3}
   _attackSound:
   - {fileID: 8300000, guid: 929fd214252d7034d93c9463bf63e091, type: 3}
   - {fileID: 8300000, guid: 73b0e478c9b0c4242bc3c687a6869e81, type: 3}
