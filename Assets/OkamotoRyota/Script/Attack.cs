@@ -19,6 +19,7 @@ public class Attack : MonoBehaviour
         if(Input.GetButtonDown("Fire1") && _attackCoolTime._timer > _attackCoolTime.AttackInterval)
         {
             Shot();
+            _attackCoolTime._timer = 0;
         }
     }
 

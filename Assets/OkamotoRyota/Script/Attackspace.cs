@@ -18,10 +18,5 @@ public class Attackspace : MonoBehaviour
     {
         _coolTimeSlider.value = _timer;
         _timer += Time.deltaTime;
-
-        if (Input.GetButtonDown("Fire1") && _timer > AttackInterval)
-        {
-            _timer = 0;
-        }
     }
 }

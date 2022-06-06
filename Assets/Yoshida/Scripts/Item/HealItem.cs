@@ -9,20 +9,11 @@ using UnityEngine.UI;
 public class HealItem : MonoBehaviour
 {
     [Tooltip("回復量"), SerializeField] int _healPoints = 1;
-    PlayerHP _text;
-    [SerializeField] GameObject _player = default;  //テスト用。マスターではSpeedItem.csのようにしてね
+    [SerializeField] PlayerHP _playerHP;
 
     public void GetHealItem()
     {
-        var hp = _player.GetComponent<PlayerHP>().HP;   //テスト用。マスターではSpeedItem.csのようにしてね
-        var hpValue = _player.GetComponent<PlayerHP>().HPmax;   //テスト用。マスターではSpeedItem.csのようにしてね
-        hp += _healPoints;
-        _text.GetComponent<PlayerHP>()._uiText.text = $"{_healPoints} 回復した！".ToString();
-
-        if(hp > hpValue)
-        {
-            hp = hpValue;
-            _text._uiText.text = $"HPはもう既に最大です".ToString();
-        }
+        _playerHP.Heal(_healPoints);
+        //GameManager.Instance.PlayerHP.Heal(_healPoints);
     }
 }

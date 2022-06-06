@@ -13,15 +13,17 @@ public class SpeedUpItem : MonoBehaviour
 
     public void GetSpeedUpItem()
     {
+        _text = GetComponent<PlayerHP>();
         var currentspeed = GameManager.Instance.Attackspace.AttackInterval;
         var minspeedvalue = GameManager.Instance.Attackspace.AttackIntervalMin;
-        _text.GetComponent<PlayerHP>()._uiText.text = $"クールタイムが{_reduceTime}減少した！".ToString();
+        //_text.GetComponent<PlayerHP>()._uiText.text = $"クールタイムが{_reduceTime}減少した！".ToString();
+        _text.UiText.text = $"クールタイムが{_reduceTime}早くなった！";
         currentspeed -= _reduceTime;
 
         if(currentspeed < minspeedvalue)
         {
             currentspeed = minspeedvalue;
-            _text._uiText.text = $"クールタイムは最速です".ToString();
+            _text.UiText.text = $"クールタイムは最速です";
         }
     }
 }
