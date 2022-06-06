@@ -27,7 +27,11 @@ public class PlayerHP : MonoBehaviour
         HP -= _damage;
         UiText.text = $"{_damage}ダメージ受けた！".ToString();
         _hpSlider.value -= _damage;
-        StartCoroutine(SetDamageEffect());
+        if (effectDamege != null)
+        {
+            StartCoroutine(SetDamageEffect());
+        }
+      
         if(HP <= 0 && !_dieFlag) //死亡
         {
             HP = 0;//もしHPがダメージを受け、HPが0以下になった場合0にする
