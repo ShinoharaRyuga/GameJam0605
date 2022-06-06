@@ -19,6 +19,7 @@ public class Attackspace : MonoBehaviour
     }
     void Update()
     {
+        _coolTimeSlider.maxValue = AttackInterval;
         _coolTimeSlider.value = _timer;
         _timer += Time.deltaTime;
     }
@@ -29,6 +30,7 @@ public class Attackspace : MonoBehaviour
         _text.UiText.text = $"攻撃速度が早くなった";
         if(AttackInterval < AttackIntervalMin)
         {
+            AttackInterval = AttackIntervalMin;
             _text.UiText.text = "攻撃速度はマックスです";
             return;
         }
