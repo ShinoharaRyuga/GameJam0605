@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class HealItem : MonoBehaviour
 {
     [Tooltip("‰ñ•œ—Ê"), SerializeField] int _healPoints = 1;
-    [SerializeField] PlayerHP _playerHP;
     [SerializeField ,Tooltip("ƒAƒCƒeƒ€‚Ì¶‘¶ŠÔ")] float _itemLifeTime = 1f;
 
     private void Start()
@@ -19,7 +18,7 @@ public class HealItem : MonoBehaviour
 
     public void GetHealItem()
     {
-        _playerHP.Heal(_healPoints);
-        //GameManager.Instance.PlayerHP.Heal(_healPoints);
+        GameManager.Instance.PlayerHP.Heal(_healPoints);
+        Destroy(gameObject);
     }
 }

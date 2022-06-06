@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class SpeedUpItem : MonoBehaviour
 {
     [Tooltip("ëÅÇ≠Ç∑ÇÈä‘äu"), SerializeField] float _reduceTime = 0.2f;
-    [SerializeField] Attackspace _attackSpace;
     [SerializeField, Tooltip("ÉAÉCÉeÉÄÇÃê∂ë∂éûä‘")] float _itemLifeTime = 1f;
 
     private void Start()
@@ -19,6 +18,7 @@ public class SpeedUpItem : MonoBehaviour
 
     public void GetSpeedUpItem()
     {
-        _attackSpace.SpeedUp(_reduceTime);
+        GameManager.Instance.Attackspace.SpeedUp(_reduceTime);
+        Destroy(gameObject);
     }
 }
