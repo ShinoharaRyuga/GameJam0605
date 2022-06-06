@@ -102,7 +102,9 @@ public class GameManager : MonoBehaviour
         _currentStage++;
         Debug.Log($"currentStage = {_currentStage}");
 
-        if(_currentStage == _maxStage-1)
+        if (_currentStage == 0) _playTime = 0;
+
+        if (_currentStage == _maxStage-1)
         {
             _BGMPlayer = GameObject.Find("BGM");
             _BGMPlayer.GetComponent<BGMPlayer>().PlayLastStageBGM();
