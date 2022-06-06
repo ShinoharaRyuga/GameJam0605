@@ -10,6 +10,12 @@ public class HealItem : MonoBehaviour
 {
     [Tooltip("‰ñ•œ—Ê"), SerializeField] int _healPoints = 1;
     [SerializeField] PlayerHP _playerHP;
+    [SerializeField ,Tooltip("ƒAƒCƒeƒ€‚Ì¶‘¶ŠÔ")] float _itemLifeTime = 1f;
+
+    private void Start()
+    {
+        Destroy(gameObject, _itemLifeTime);
+    }
 
     public void GetHealItem()
     {

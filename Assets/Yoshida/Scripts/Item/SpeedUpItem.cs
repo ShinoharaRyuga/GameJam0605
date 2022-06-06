@@ -10,6 +10,12 @@ public class SpeedUpItem : MonoBehaviour
 {
     [Tooltip("‘‚­‚·‚éŠÔŠu"), SerializeField] float _reduceTime = 0.2f;
     [SerializeField] Attackspace _attackSpace;
+    [SerializeField, Tooltip("ƒAƒCƒeƒ€‚Ì¶‘¶ŠÔ")] float _itemLifeTime = 1f;
+
+    private void Start()
+    {
+        Destroy(gameObject, _itemLifeTime);
+    }
 
     public void GetSpeedUpItem()
     {
