@@ -144,7 +144,7 @@ MonoBehaviour:
   _attackDamage: 1
   _attackFirstDelay: 2
   _audioSource: {fileID: 4585071533535014577}
-  _deathSound: {fileID: 8300000, guid: ba81ad652d5df854fb4fc93ec4009268, type: 3}
+  _deathSound: {fileID: 8300000, guid: 329394d9b712dd8429153773ef6d9e6c, type: 3}
   _attackSound:
   - {fileID: 8300000, guid: 929fd214252d7034d93c9463bf63e091, type: 3}
   - {fileID: 8300000, guid: 73b0e478c9b0c4242bc3c687a6869e81, type: 3}
