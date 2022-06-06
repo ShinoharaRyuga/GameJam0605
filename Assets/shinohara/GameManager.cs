@@ -77,10 +77,8 @@ public class GameManager : MonoBehaviour
 
         if (_currentEnemyCount <= 0) //ステージクリア
         {
-            //scenload
-            //StageChange();
+            Instantiate(_fadeObj);
         }
-
     }
 
     public void InstantiateFadeInObj()
@@ -108,14 +106,17 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SetEnemyCount(_stageEnemyCounts[_currentStage]);
-            _currentBackGround = Instantiate(_stageBackGround[_currentStage], Vector3.zero, Quaternion.identity);
-            _currentSpawnManager = Instantiate(_stageSpawnManager[_currentStage], Vector3.zero, Quaternion.identity);
-            SpawnManager sm = _currentSpawnManager.GetComponent<SpawnManager>();
-            sm.SetMaxSpawnCount(_stageEnemyCounts[_currentStage]);
+            EnemySpawn();
         }
+    }
 
-        Instantiate(_fadeObj);
+    public void EnemySpawn()
+    {
+        SetEnemyCount(_stageEnemyCounts[_currentStage]);
+        _currentBackGround = Instantiate(_stageBackGround[_currentStage], Vector3.zero, Quaternion.identity);
+        _currentSpawnManager = Instantiate(_stageSpawnManager[_currentStage], Vector3.zero, Quaternion.identity);
+        SpawnManager sm = _currentSpawnManager.GetComponent<SpawnManager>();
+        sm.SetMaxSpawnCount(_stageEnemyCounts[_currentStage]);
     }
 
     void GameResult(bool isClear)
