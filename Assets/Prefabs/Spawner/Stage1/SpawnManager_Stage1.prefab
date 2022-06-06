@@ -47,10 +47,10 @@ MonoBehaviour:
   _SpawnPointTag: SP1
   _enemy:
   - {fileID: 225047838391864187, guid: 87e8d5632db729047982122399006ee0, type: 3}
-  - {fileID: 225047838391864187, guid: 87e8d5632db729047982122399006ee0, type: 3}
-  - {fileID: 225047838391864187, guid: 87e8d5632db729047982122399006ee0, type: 3}
-  _spawnTimeRange: {x: 1, y: 3}
+  _enemyBOSS: {fileID: 0}
+  _spawnTimeRange: {x: 3, y: 6}
   _maxSpawnCount: 10
+  _startDelay: 5
   _spawnPoints:
   - {fileID: 0}
   - {fileID: 0}

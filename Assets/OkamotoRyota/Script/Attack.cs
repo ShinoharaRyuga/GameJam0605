@@ -7,11 +7,14 @@ public class Attack : MonoBehaviour
    // [SerializeField] LayerMask _layerMask = default;
     [SerializeField] float _rayDistance = 100f;
     [SerializeField] int _atk = 1;
+    [SerializeField] GameObject _fireEffectPrefab;
+    FireEffectPlay _fireEffect;
     Attackspace _attackCoolTime;
 
     void Start()
     {
         _attackCoolTime = GetComponent<Attackspace>();
+        _fireEffect = _fireEffectPrefab.GetComponent<FireEffectPlay>();
     }
 
     void Update()
@@ -25,9 +28,14 @@ public class Attack : MonoBehaviour
 
     void Shot()
     {
+        
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction);
-
+        Debug.Log(Input.mousePosition);
+        Vector3 position = Input.mousePosition;
+        // Zé≤èCê≥
+        position.z = 10f;
+        _fireEffect.Fire(Camera.main.ScreenToWorldPoint(position));
         if (hit)
         {
             if (hit.collider.gameObject.CompareTag("HealItem"))
