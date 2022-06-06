@@ -7,15 +7,16 @@ public class Attack : MonoBehaviour
    // [SerializeField] LayerMask _layerMask = default;
     [SerializeField] float _rayDistance = 100f;
     [SerializeField] int _atk = 1;
+    Attackspace _attackCoolTime;
 
     void Start()
     {
-        
+        _attackCoolTime = GetComponent<Attackspace>();
     }
 
     void Update()
     { 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && _attackCoolTime._timer > _attackCoolTime.AttackInterval)
         {
             Shot();
         }
