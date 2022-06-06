@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4366057606122183455}
   - component: {fileID: 4366057606122183448}
   m_Layer: 0
-  m_Name: SpawnManager_Stage2
+  m_Name: SpawnManager_Stage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,13 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e33a42969ec8e9647aea989a425c8202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SpawnPointTag: SP2
+  _SpawnPointTag: SP3
   _enemy:
+  - {fileID: 225047838391864187, guid: 8ae1c2fa87acc4248bbcf8a05c79a2e0, type: 3}
   - {fileID: 225047838391864187, guid: 87e8d5632db729047982122399006ee0, type: 3}
-  - {fileID: 225047838391864187, guid: 87e8d5632db729047982122399006ee0, type: 3}
-  - {fileID: 225047838391864187, guid: 87e8d5632db729047982122399006ee0, type: 3}
+  _enemyBOSS: {fileID: 225047838391864187, guid: e92f53f730290ca47a90912f64a6a8ff, type: 3}
   _spawnTimeRange: {x: 1, y: 3}
   _maxSpawnCount: 10
+  _startDelay: 5
   _spawnPoints:
   - {fileID: 0}
   - {fileID: 0}

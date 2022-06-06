@@ -12,7 +12,7 @@ public class FireEffectPlay : MonoBehaviour
     {
         int random = Random.Range(0, _fireSound.Length);
         _audioSource.PlayOneShot(_fireSound[random]);
-        Instantiate(_fireEffect, pos, Quaternion.identity);
+        Instantiate(_fireEffect, pos, _fireEffect.transform.rotation);
     }
 
 }
