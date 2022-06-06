@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField, Tooltip("移動速度")] float _moveSpeed = 1f;
     [SerializeField, Tooltip("攻撃間隔")] float _attackInterval = 1f;
     [SerializeField, Tooltip("攻撃ダメージ")] int _attackDamage= 1;
+    [SerializeField] float _attackFirstDelay = 2.0f;
     [SerializeField] AudioSource _audioSource;
     [SerializeField] AudioClip _deathSound;
     [SerializeField] AudioClip[] _attackSound;
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour
     {
         var index = Random.Range(0, 8);
         Move((MoveDirection)index);
-        StartCoroutine(Attack());
+        StartCoroutine(FirstDelay());
         _audioSource = GetComponent<AudioSource>();
     }
 
@@ -36,6 +37,12 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             GameManager.Instance.ChangeEnemyCount();
         }
+    }
+
+    public IEnumerator FirstDelay()
+    {
+        yield return new WaitForSeconds(_attackFirstDelay);
+        yield return Attack();
     }
 
     /// <summary>一定時間経過したらプレイヤーにダメージを与える </summary>
