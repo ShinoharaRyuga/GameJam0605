@@ -141,6 +141,7 @@ MonoBehaviour:
   _moveSpeed: 2
   _attackInterval: 10
   _attackDamage: 3
+  _attackFirstDelay: 2
   _audioSource: {fileID: -6206574297615380813}
   _deathSound: {fileID: 8300000, guid: 0eb673dc31e22fd4a8f158be386c8053, type: 3}
   _attackSound:
@@ -148,6 +149,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 73b0e478c9b0c4242bc3c687a6869e81, type: 3}
   - {fileID: 8300000, guid: e87fb2e782bcac14d82191fa02c2c841, type: 3}
   - {fileID: 8300000, guid: 25d8a6b3073dcbf40b0133fdbfeb55ce, type: 3}
+  _deathEffect: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 3}
 --- !u!82 &-6206574297615380813
 AudioSource:
   m_ObjectHideFlags: 0
