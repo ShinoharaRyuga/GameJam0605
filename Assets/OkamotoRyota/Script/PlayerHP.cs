@@ -32,13 +32,14 @@ public class PlayerHP : MonoBehaviour
 
     public void Heal(int healpoints)
     {
+        Debug.Log(HP);
         if(HP < HPmax)
         {
             HP += healpoints;
             _hpSlider.value += healpoints;
             UiText.text = $"{healpoints}‰ñ•œ‚µ‚½";
         }
-        else if(HP > HPmax)
+        else if(HP >= HPmax)
         {
             UiText.text = "HP‚ÍŠù‚ÉÅ‘å‚Å‚·";
             return;

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class SpeedUpItem : MonoBehaviour
 {
     [Tooltip("ëÅÇ≠Ç∑ÇÈä‘äu"), SerializeField] float _reduceTime = 0.2f;
-    PlayerHP _text;
+    [SerializeField] Attackspace _attackSpace;
 
     public void GetSpeedUpItem()
     {
