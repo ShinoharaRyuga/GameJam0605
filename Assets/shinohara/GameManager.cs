@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     float _playTime = 0.0f;
     bool _isTimeCount = true;
     /// <summary>現在のステージ </summary>
-    int _currentStage = 0;
+    int _currentStage = -1;
     public PlayerHP PlayerHP { get => _playerHP; set => _playerHP = value; }
     public Attackspace Attackspace { get => _attackspace; set => _attackspace = value; }
 
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         }
         else if (scene.name == "Title")
         {
-            _currentStage = 0;
+            _currentStage = -1;
             Cursor.visible = true;
         }
 
@@ -77,14 +77,8 @@ public class GameManager : MonoBehaviour
 
         if (_currentEnemyCount <= 0) //ステージクリア
         {
-            _currentStage++;
-
-            if (_currentStage < _stageEnemyCounts.Length)
-            {
-                SetEnemyCount(_stageEnemyCounts[_currentStage]);
-            }
-
-            StageChange();
+            //scenload
+            //StageChange();
         }
 
     }
@@ -96,6 +90,8 @@ public class GameManager : MonoBehaviour
 
     public void StageChange()
     {
+        _currentStage++;
+        Debug.Log($"currentStage = {_currentStage}");
         if (_currentBackGround != null)
         {
             Destroy(_currentBackGround);
@@ -112,6 +108,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            SetEnemyCount(_stageEnemyCounts[_currentStage]);
             _currentBackGround = Instantiate(_stageBackGround[_currentStage], Vector3.zero, Quaternion.identity);
             _currentSpawnManager = Instantiate(_stageSpawnManager[_currentStage], Vector3.zero, Quaternion.identity);
             SpawnManager sm = _currentSpawnManager.GetComponent<SpawnManager>();
