@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coolTimeSlider: {fileID: 1554139343}
-  AttackInterval: 3
+  AttackInterval: 1
   AttackIntervalMin: 0.2
   _timer: 0
 --- !u!1 &8249538797727621742

@@ -124,5 +124,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b399752f71c7c748b50f96e458d154a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healPoints: 1
+  _healPoints: 10
   _itemLifeTime: 3
