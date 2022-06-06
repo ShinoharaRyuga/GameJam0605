@@ -1267,6 +1267,7 @@ MonoBehaviour:
   _fadeInObj: {fileID: 6674304073555983870, guid: 228897d74c3840a43b7ed36486e3e43b, type: 3}
   _fadeOutObj: {fileID: 3793661035338802721, guid: 54fe368edb65d3e4e903a264a1f9a078, type: 3}
   _fadeObj: {fileID: 2143753091648202896, guid: b465d7bace2f10c41b9b30624f217b29, type: 3}
+  _gameOverUI: {fileID: 5298405271261707105, guid: 01016666686138b42a6af6d0037680fe, type: 3}
   _playerPrefab: {fileID: 3465893403252782070, guid: 01680ffebcecbce4f9b90e0a8c0d16c6, type: 3}
   _gameResult: {fileID: 5874293474321978526, guid: 7c355e0e281425a42a0983f2e29c29f8, type: 3}
 --- !u!4 &1316835785

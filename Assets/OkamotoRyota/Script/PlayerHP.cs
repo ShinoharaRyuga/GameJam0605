@@ -9,8 +9,9 @@ public class PlayerHP : MonoBehaviour
     public int HPmax = 3;//PlayerMAXHP = 3
     [Tooltip("Slider"), SerializeField] Slider _hpSlider = default;
     [Tooltip("InfoText に表示する Text"), SerializeField] Text _uiText;
-
     public Text UiText { get => _uiText; set => _uiText = value; }
+
+    bool _dieFlag = false;
 
     void Start()
     {
@@ -24,9 +25,11 @@ public class PlayerHP : MonoBehaviour
         HP -= _damage;
         UiText.text = $"{_damage}ダメージ受けた！".ToString();
         _hpSlider.value -= _damage;
-        if(HP <= 0)
+        if(HP <= 0 && !_dieFlag)
         {
             HP = 0;//もしHPがダメージを受け、HPが0以下になった場合0にする
+            GameManager.Instance.GameOver();
+            _dieFlag = true;
         }
     }
 

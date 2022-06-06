@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField, Tooltip("フェードインをさせるオブジェクト")] GameObject _fadeInObj = default;
     [SerializeField, Tooltip("フェードアウトをさせるオブジェクト")] GameObject _fadeOutObj = default;
     [SerializeField, Tooltip("フェードさせるオブジェクト")] GameObject _fadeObj = default;
+    [SerializeField, Tooltip("プレイヤー死亡時に出すUI")] GameObject _gameOverUI = default;
     [SerializeField] GameObject _playerPrefab = default;
     [SerializeField, Tooltip("ゲームリザルトUI")] GameObject _gameResult = default;
     private GameObject _BGMPlayer = default;
@@ -81,6 +82,14 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(_fadeObj);
         }
+    }
+    
+    /// <summary>プレイヤーが死亡したらゲームオーバーUIを表示する </summary>
+    public void GameOver()
+    {
+        Instantiate(_gameOverUI);
+        Destroy(_player);
+        Cursor.visible = true;
     }
 
     public void InstantiateFadeInObj()
