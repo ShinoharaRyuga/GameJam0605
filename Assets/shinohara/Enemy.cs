@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] AudioClip _deathSound;
     [SerializeField] AudioClip[] _attackSound;
     [SerializeField] GameObject _deathEffect;
+    Animator _anim => GetComponent<Animator>();
 
     Rigidbody2D _rb2D => GetComponent<Rigidbody2D>();
 
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour
     public void GetDamage(int damage)
     {
         _hp -= damage;
-
+        _anim.Play("Damage");
         if (_hp <= 0)
         {
             _audioSource.PlayOneShot(_deathSound);
