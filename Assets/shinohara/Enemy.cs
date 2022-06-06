@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] AudioSource _audioSource;
     [SerializeField] AudioClip _deathSound;
     [SerializeField] AudioClip[] _attackSound;
+    [SerializeField] GameObject _deathEffect;
 
     Rigidbody2D _rb2D => GetComponent<Rigidbody2D>();
 
@@ -34,6 +35,7 @@ public class Enemy : MonoBehaviour
         if (_hp <= 0)
         {
             _audioSource.PlayOneShot(_deathSound);
+            Instantiate(_deathEffect, this.transform.position, _deathEffect.transform.rotation);
             Destroy(gameObject);
             GameManager.Instance.ChangeEnemyCount();
         }
