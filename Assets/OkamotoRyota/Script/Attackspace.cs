@@ -1,21 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Attackspace : MonoBehaviour
 {
-    [SerializeField]public float AttackInterval = 3;
+    [SerializeField] Slider _coolTimeSlider = default;
+    [SerializeField]public float AttackInterval = 1;
     public float AttackIntervalMin = 0.2f;
-    float _timer = 0;
-    // Update is called once per frame
+    public float _timer = 0;
+
+    PlayerHP _text;
+
+    private void Start()
+    {
+        _text = GetComponent<PlayerHP>();
+        _coolTimeSlider.maxValue = AttackInterval;
+    }
     void Update()
     {
-
+        _coolTimeSlider.maxValue = AttackInterval;
+        _coolTimeSlider.value = _timer;
         _timer += Time.deltaTime;
+    }
 
-        if (Input.GetButtonDown("Fire1") && _timer > AttackInterval)
+    public void SpeedUp(float speedupvalue)
+    {
+        AttackInterval -= speedupvalue;
+        _text.UiText.text = $"攻撃速度が早くなった";
+        if(AttackInterval < AttackIntervalMin)
         {
-            AttackIntervalMin = 0;
+            AttackInterval = AttackIntervalMin;
+            _text.UiText.text = "攻撃速度はマックスです";
+            return;
         }
     }
 }

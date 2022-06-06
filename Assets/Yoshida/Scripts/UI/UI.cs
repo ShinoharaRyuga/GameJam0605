@@ -10,7 +10,7 @@ public class UI : MonoBehaviour
 {
     [Tooltip("PlayerのGameObject(テスト用)"), SerializeField] GameObject _player;
     [Tooltip("Slider"), SerializeField] Slider _hpSlider = default;
-    [Tooltip("InfoText に表示する Text"), SerializeField] Text _infoText = default;
+    [Tooltip("InfoText に表示する Text"), SerializeField] public Text _infoText = default;
 
     private void Start()
     {
