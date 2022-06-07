@@ -7,14 +7,13 @@ public class PlayerHP : MonoBehaviour
 {
     [Tooltip("ダメージのエフェクト"), SerializeField] GameObject effectDamege;
     [Tooltip("エフェクトの表示時間"), SerializeField] float WaitforTime;
-    public int HP;//playersHP
+    [SerializeField] int HP;
     public int HPmax = 3;//PlayerMAXHP = 3
     [Tooltip("Slider"), SerializeField] Slider _hpSlider = default;
     [Tooltip("InfoText に表示する Text"), SerializeField] Text _uiText;
-    public Text UiText { get => _uiText; set => _uiText = value; }
-
+    Animator _damageAnimator => effectDamege.GetComponent<Animator>();
     bool _dieFlag = false;
-
+    public Text UiText { get => _uiText; set => _uiText = value; }
     void Start()
     {
         HP = HPmax;//最初にplayerのHPをmaxの状態にする
@@ -29,7 +28,7 @@ public class PlayerHP : MonoBehaviour
         _hpSlider.value -= _damage;
         if (effectDamege != null)
         {
-            StartCoroutine(SetDamageEffect());
+            _damageAnimator.SetTrigger("Damage");
         }
       
         if(HP <= 0 && !_dieFlag) //死亡

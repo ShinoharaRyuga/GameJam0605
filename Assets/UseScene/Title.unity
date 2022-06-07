@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 465465163}
   - component: {fileID: 465465162}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: ItemText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,7 +705,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e2ca99e51c02ec64ba8e6680cb0c2940, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -785,7 +785,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e2ca99e51c02ec64ba8e6680cb0c2940, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -909,6 +909,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 423464528286884538, guid: 1f9fd39d10cc4ac499a2f3ad4354d12e, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e2ca99e51c02ec64ba8e6680cb0c2940, type: 3}
     - target: {fileID: 423464528852372708, guid: 1f9fd39d10cc4ac499a2f3ad4354d12e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 6
@@ -937,9 +941,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 3.288269
       objectReference: {fileID: 0}
+    - target: {fileID: 423464529341046496, guid: 1f9fd39d10cc4ac499a2f3ad4354d12e, type: 3}
+      propertyPath: m_Text
+      value: "\uFF5E\u3042\u305D\u3073\u304B\u305F\uFF5E\n\uFF01\uFF01\u64CD\u4F5C\u306F\u3044\u305F\u3063\u3066\u7C21\u5358\uFF01\uFF01\n\u6575\u3092\u5DE6\u30AF\u30EA\u30C3\u30AF\u3067\u6253\u3061\u5012\u305D\u3046\uFF01\n\n\u30DC\u30B9\u3092\u5012\u305B\u3070\n 
+        \u30AF\u30EA\u30A2\uFF01"
+      objectReference: {fileID: 0}
+    - target: {fileID: 423464529341046496, guid: 1f9fd39d10cc4ac499a2f3ad4354d12e, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e2ca99e51c02ec64ba8e6680cb0c2940, type: 3}
     - target: {fileID: 423464529341046510, guid: 1f9fd39d10cc4ac499a2f3ad4354d12e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 93
+      value: 76
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 423464528852372709, guid: 1f9fd39d10cc4ac499a2f3ad4354d12e, type: 3}
@@ -1509,7 +1522,7 @@ GameObject:
   - component: {fileID: 1646063564}
   - component: {fileID: 1646063563}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,7 +1598,7 @@ GameObject:
   - component: {fileID: 1667390326}
   - component: {fileID: 1667390325}
   m_Layer: 5
-  m_Name: Text (Legacy) (2)
+  m_Name: ItemText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1632,7 +1645,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: e2ca99e51c02ec64ba8e6680cb0c2940, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -1745,7 +1758,7 @@ GameObject:
   - component: {fileID: 2023405001}
   - component: {fileID: 2023405000}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: ItemImage (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
